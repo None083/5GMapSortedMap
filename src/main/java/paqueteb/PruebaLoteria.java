@@ -4,6 +4,8 @@
  */
 package paqueteb;
 
+import java.util.Scanner;
+
 /**
  *
  * @author FX506
@@ -18,6 +20,12 @@ public class PruebaLoteria {
         Loteria loteria = new Loteria();
         
         loteria.imprimirResultados();
+        
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.println("Introduce el número de tu boleto");
+        String boleto = teclado.nextLine();
+        System.out.println("Tu premio es: " + loteria.mirarPremio(boleto));
         
     }
     

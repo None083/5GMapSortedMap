@@ -5,6 +5,7 @@
 package paqueteb;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -38,13 +39,26 @@ public class Loteria {
     }
 
     public void imprimirResultados(){
-        String[] listaKeys = (String[]) this.loteria.keySet().toArray();
-        for (int i = 0; i < listaKeys.length; i++) {
-            System.out.println(listaKeys[i] + "-->" + loteria.get(listaKeys[i]));
+//        String[] listaKeys = (String[]) this.loteria.keySet().toArray();
+//        for (int i = 0; i < listaKeys.length; i++) {
+//            System.out.println(listaKeys[i] + "-->" + loteria.get(listaKeys[i]));
+//        }
+//        System.out.print(this.loteria.entrySet());
+
+        for (Map.Entry<String, String> entrada : loteria.entrySet()) {
+            String key = entrada.getKey();
+            String val = entrada.getValue();
+            System.out.println("Key: " + key + " -- value: " + val);
         }
+        
     }
     
     public String mirarPremio(String key){
+         
+        if(key.equals(null)){
+            return 
+        }
+        
         return loteria.get(key);
     }
     

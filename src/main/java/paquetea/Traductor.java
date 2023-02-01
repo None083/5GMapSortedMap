@@ -59,16 +59,18 @@ public class Traductor {
         return this.traduccion.get(palabraExtranjera);
     }
     
-    public String[] listaPalabrasExtranjeras(){
-        return (String[]) this.traduccion.keySet().toArray();
-    }
+//    public String[] listaPalabrasExtranjeras(){
+//        return (String[]) this.traduccion.keySet().toArray();
+//    }
+    
     public ArrayList<String> listaPalabrasExtranjerasArrayList(){
         return new ArrayList<>(this.traduccion.keySet());
     }
     
-    public String[] listaPalabrasEspaniol(){
-        return (String[]) this.traduccion.values().toArray();
-    }
+//    public String[] listaPalabrasEspaniol(){
+//        return (String[]) this.traduccion.values().toArray();
+//    }
+    
     public ArrayList<String> listaPalabrasEspaniolArrayList(){
         return new ArrayList<>(this.traduccion.values());
     }
