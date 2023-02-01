@@ -50,13 +50,12 @@ public class Loteria {
             String val = entrada.getValue();
             System.out.println("Key: " + key + " -- value: " + val);
         }
-        
     }
     
     public String mirarPremio(String key){
          
-        if(key.equals(null)){
-            return 
+        if(loteria.get(key) == null){
+            return "No tiene premio";
         }
         
         return loteria.get(key);

@@ -4,6 +4,10 @@
  */
 package paquetec;
 
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  *
  * @author noelia
@@ -19,8 +23,41 @@ public class PruebaEjercito {
 
     public static void main(String[] args) {
         
+        Map<String, Ejercito> armada = new TreeMap<>();
         
+        Ejercito prueba = new Ejercito();
+        
+        prueba.alistarSoldado(new Soldado("09086782N", "Monty", "Perro", "Deaguas", 1));
+        prueba.alistarSoldado(new Soldado());
+        
+        aniadirEjercito("01", new Ejercito(), armada);
+        aniadirEjercito("02", new Ejercito(), armada);
+        aniadirEjercito("03", new Ejercito(), armada);
+        aniadirEjercito("04", prueba, armada);
+        
+        System.out.println(mostrarEjercito("02", armada));
+        System.out.println(obtenerEjercito(armada));
         
     }
+    
+   private static void aniadirEjercito(String key, Ejercito e, Map<String, Ejercito> armada){
+      armada.put(key, e);
+   }
+   
+   private static Ejercito mostrarEjercito(String key, Map<String, Ejercito> armada){
+       return armada.get(key);
+   }
+   
+   private static void imprimiArmada(Map<String, Ejercito> armada){
+       for (Map.Entry<String, Ejercito> entrada : armada.entrySet()) {
+           Object key = entrada.getKey();
+           Object val = entrada.getValue();
+           System.out.println("Key: " + key + " -- value: " + val); 
+       }
+   }
+   
+   private static ArrayList<Ejercito> obtenerEjercito(Map<String, Ejercito> armada){
+       return new ArrayList<>(armada.values());
+   }
     
 }

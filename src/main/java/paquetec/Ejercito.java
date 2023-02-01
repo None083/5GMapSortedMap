@@ -21,6 +21,11 @@ public class Ejercito {
         ejercito = new HashSet<>();
     }
 
+    @Override
+    public String toString() {
+        return "Ejercito{" + "ejercito=" + ejercito + '}';
+    }
+
     public int numeroSoldados() {
         return ejercito.size();
     }
